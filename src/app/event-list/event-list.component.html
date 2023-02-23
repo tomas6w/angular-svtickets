@@ -1,0 +1,12 @@
+<sv-event-form (createEvent)="addEvent($event)"></sv-event-form>
+
+<nav class="navbar navbar-light bg-light justify-content-between mt-4 p-2">
+  <form class="form mb-0 w-100">
+    <input class="form-control" type="text" name="search" [(ngModel)]="search" placeholder="Search"
+      aria-label="Search" />
+  </form>
+</nav>
+<div id="eventsContainer" class="mb-4 mt-4 row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+  <sv-event-card class="col" *ngFor="let event of events|eventFilter: search" [event]="event"
+    (delete)="deleteEvent($event)"></sv-event-card>
+</div>

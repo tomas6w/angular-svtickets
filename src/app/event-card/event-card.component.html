@@ -1,0 +1,16 @@
+<div class="card shadow">
+  <img class="card-img-top" [src]="event.image">
+  <div class="card-body">
+    <h4 class="card-title">{{event.title}}</h4>
+    <p class="card-text" [innerText]="event.description"></p>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-danger" (click)="deleteEvent()">Delete</button>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer text-muted row m-0">
+  <div class="col">{{event.date| date: 'dd/MM/y'}}</div>
+  <div class="col text-end">{{event.price| currency:'EUR':'symbol'}}</div>
+  </div>
+</div>
